@@ -17,6 +17,11 @@ font-family: 'Calligraffitti', cursive;
 --light-slate-gray: #78868Fff;
 --cadet: #606E77ff; */
 
+::-webkit-scrollbar {
+  background: transparent;
+  width: 0px;
+}
+
 html {
   width: 100%;
   height: 100%;
@@ -44,9 +49,19 @@ a {
 
 .header-container {
   height: 100vh;
-  background-image: url('./images/1.jpg');
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+#myVideo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
 }
 
 .header-menu {
@@ -93,12 +108,16 @@ a {
   width: 200px;
 }
 
+.mobile-menu {
+  display: none;
+}
+
 /*****************************************************/
 /****************   ABOUT STYLES      ****************/
 /*****************************************************/
 
 .about-container {
-  margin: 150px 0;
+  margin-top: 150px;
   height: 1200px;
 }
 
@@ -110,7 +129,6 @@ a {
 .about-text {
   width: 50%;
   height: 100%;
-
   float: left;
   padding: 0 5%;
 }
@@ -132,19 +150,7 @@ a {
   width: 50%;
   height: 80%;
   float: left;
-  position: relative;
-  background-image: url('./images/2.jpg');
-  background-size: cover;
-}
-
-.about-background {
-  position: absolute;
-  top: -100px;
-  right: -100px;
-  width: 100%;
-  height: 100%;
-  background-color: lightcoral;
-  z-index: -1;
+  box-shadow: 100px -100px #e8f6ffff;
 }
 
 .right-side {
@@ -152,6 +158,527 @@ a {
 }
 
 .right-offset {
-  top: -100px;
-  left: -100px;
+  box-shadow: -100px -100px #e8f6ffff;
+}
+
+/*****************************************************/
+/****************   GALLERY STYLES    ****************/
+/*****************************************************/
+
+.gallery-container {
+  height: 700px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.three-container {
+  width: 30%;
+  height: 100%;
+  display: inline-block;
+}
+
+.two-container {
+  width: 25%;
+  height: 100%;
+  display: inline-block;
+}
+
+.one-container {
+  width: 45%;
+  height: 100%;
+  display: inline-block;
+}
+
+.left-side {
+  margin-right: 10px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.small-img {
+  width: 49%;
+  height: 33%;
+  float: left;
+}
+
+.three-container div:nth-child(2) {
+  float: right;
+}
+
+.medium-img {
+  width: 100%;
+  height: 65%;
+  float: left;
+}
+
+.top-mar {
+  margin-top: 10px;
+}
+
+.large-img {
+  width: 100%;
+  height: 49%;
+}
+
+.x-large-img {
+  width: 100%;
+  height: 99.4%;
+}
+
+.x-large-img video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*****************************************************/
+/****************   BLOG STYLES    *******************/
+/*****************************************************/
+
+.blog-container {
+  height: 800px;
+  margin-top: 100px;
+  padding: 40px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.cards {
+  display: inline-block;
+  width: 450px;
+  height: 100%;
+  margin: 0 50px;
+  white-space: normal;
+}
+
+.card-img-container {
+  height: 50%;
+  padding: 15px;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  box-shadow: -20px -20px #e8f6ffff;
+}
+
+.cards h3 {
+  font-size: 2em;
+  margin-bottom: 0;
+}
+
+.cards p {
+  font-size: 1.3em;
+}
+
+.read-more {
+  font-size: 1.3em;
+  font-style: italic;
+  text-align: right;
+  cursor: pointer;
+}
+
+/*****************************************************/
+/****************   FOOTER STYLES    *****************/
+/*****************************************************/
+
+.footer-container {
+  height: 300px;
+  padding: 20px 200px 0 200px;
+  background-color: #78868fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+}
+
+.footer-container ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-container ul li {
+  padding: 30px;
+  border-right: 1px solid white;
+  height: 100%;
+  width: 300px;
+  display: flex;
+  align-items: center;
+}
+
+.footer-container ul li:nth-child(1) {
+  font-size: 1.3em;
+  flex-flow: column nowrap;
+}
+
+.footer-container ul li:nth-child(1) p {
+  margin: 10px 0;
+}
+
+.footer-container ul li:nth-child(3) {
+  border-right: none;
+  flex-flow: column nowrap;
+  justify-content: center;
+  font-size: 1.3em;
+}
+
+.footer-container ul li:nth-child(2) {
+  justify-content: space-around;
+  font-size: 3em;
+}
+
+.back-top {
+  top: 0;
+  left: 46%;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: white;
+}
+
+/*****************************************************/
+/****************   MEDIA TABLET       ***************/
+/*****************************************************/
+
+@media screen and (max-width: 1200px) {
+  /****************   ABOUT STYLES      ****************/
+
+  .about-container {
+    margin-top: 150px;
+    height: 1200px;
+  }
+
+  .about-row {
+    height: 50%;
+    padding: 40px 7%;
+  }
+
+  /****************   GALLERY STYLES    ****************/
+
+  .three-container {
+    width: 600px;
+  }
+
+  .two-container {
+    width: 600px;
+  }
+
+  .one-container {
+    width: 600px;
+  }
+}
+
+/*****************************************************/
+/****************   MEDIA CELL PHONE   ***************/
+/*****************************************************/
+
+@media screen and (max-width: 900px) {
+  .header-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  #myVideo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+  }
+
+  .header-menu {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    color: white;
+    font-size: 1.3em;
+    list-style: none;
+    width: 100%;
+    padding: 40px 0;
+  }
+
+  .header-menu li:nth-child(1) {
+    margin-right: auto;
+  }
+
+  .header-menu li:nth-child(6) {
+    margin-left: auto;
+  }
+
+  .header-menu-item {
+    padding: 20px 40px;
+  }
+
+  .header-title {
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 10% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header-title h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 4em;
+    margin-bottom: 10px;
+  }
+
+  .header-title p {
+    width: 200px;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  /*****************************************************/
+  /****************   ABOUT STYLES      ****************/
+  /*****************************************************/
+
+  .about-container {
+    margin-top: 150px;
+    height: 1200px;
+  }
+
+  .about-row {
+    height: 50%;
+    padding: 40px 20%;
+  }
+
+  .about-text {
+    width: 50%;
+    height: 100%;
+    float: left;
+    padding: 0 5%;
+  }
+
+  .about-text h2 span {
+    font-size: 3em;
+  }
+
+  .about-text h2 {
+    margin-top: 0;
+    font-size: 3em;
+  }
+
+  .about-text p {
+    font-size: 1.5em;
+  }
+
+  .about-image {
+    width: 50%;
+    height: 80%;
+    float: left;
+    box-shadow: 100px -100px #e8f6ffff;
+  }
+
+  .right-side {
+    float: right;
+  }
+
+  .right-offset {
+    box-shadow: -100px -100px #e8f6ffff;
+  }
+
+  /*****************************************************/
+  /****************   GALLERY STYLES    ****************/
+  /*****************************************************/
+
+  .gallery-container {
+    height: 700px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+
+  .three-container {
+    width: 30%;
+    height: 100%;
+    display: inline-block;
+  }
+
+  .two-container {
+    width: 25%;
+    height: 100%;
+    display: inline-block;
+  }
+
+  .one-container {
+    width: 45%;
+    height: 100%;
+    display: inline-block;
+  }
+
+  .left-side {
+    margin-right: 10px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .small-img {
+    width: 49%;
+    height: 33%;
+    float: left;
+  }
+
+  .three-container div:nth-child(2) {
+    float: right;
+  }
+
+  .medium-img {
+    width: 100%;
+    height: 65%;
+    float: left;
+  }
+
+  .top-mar {
+    margin-top: 10px;
+  }
+
+  .large-img {
+    width: 100%;
+    height: 49%;
+  }
+
+  .x-large-img {
+    width: 100%;
+    height: 99.4%;
+  }
+
+  .x-large-img video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /*****************************************************/
+  /****************   BLOG STYLES    *******************/
+  /*****************************************************/
+
+  .blog-container {
+    height: 800px;
+    margin-top: 100px;
+    padding: 40px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+
+  .cards {
+    display: inline-block;
+    width: 450px;
+    height: 100%;
+    margin: 0 50px;
+    white-space: normal;
+  }
+
+  .card-img-container {
+    height: 50%;
+    padding: 15px;
+  }
+
+  .card-img {
+    width: 100%;
+    height: 100%;
+    box-shadow: -20px -20px #e8f6ffff;
+  }
+
+  .cards h3 {
+    font-size: 2em;
+    margin-bottom: 0;
+  }
+
+  .cards p {
+    font-size: 1.3em;
+  }
+
+  .read-more {
+    font-size: 1.3em;
+    font-style: italic;
+    text-align: right;
+    cursor: pointer;
+  }
+
+  /*****************************************************/
+  /****************   FOOTER STYLES    *****************/
+  /*****************************************************/
+
+  .footer-container {
+    height: 300px;
+    padding: 20px 200px 0 200px;
+    background-color: #78868fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+  }
+
+  .footer-container ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-container ul li {
+    padding: 30px;
+    border-right: 1px solid white;
+    height: 100%;
+    width: 300px;
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-container ul li:nth-child(1) {
+    font-size: 1.3em;
+    flex-flow: column nowrap;
+  }
+
+  .footer-container ul li:nth-child(1) p {
+    margin: 10px 0;
+  }
+
+  .footer-container ul li:nth-child(3) {
+    border-right: none;
+    flex-flow: column nowrap;
+    justify-content: center;
+    font-size: 1.3em;
+  }
+
+  .footer-container ul li:nth-child(2) {
+    justify-content: space-around;
+    font-size: 3em;
+  }
+
+  .back-top {
+    top: 0;
+    left: 46%;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: white;
+  }
 }
